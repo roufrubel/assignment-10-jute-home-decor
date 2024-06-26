@@ -5,6 +5,9 @@ import Home from "../Home/Home";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AddCraft from "../pages/AddCraft";
+import AllCrafts from "../Home/AllCrafts";
+import MyCraftList from "../pages/MyCraftList";
 
 const Routes = createBrowserRouter([
     {
@@ -15,23 +18,32 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('/house.json')
+                loader: () => fetch('http://localhost:5000/craft')
             },
             {
-                path: '/house/:id',
+                path: "craft",
+                element: <AllCrafts></AllCrafts>,
+                loader: () => fetch('http://localhost:5000/craft')
+              },
+            {
+                path: 'craftlist',
                 element: <PrivateRoute>
-                    {/* <House></House> */}
+                    <MyCraftList></MyCraftList>
                     </PrivateRoute>,
-                loader: () => fetch('/house.json')
+                loader: () => fetch('http://localhost:5000/craft')                    
             },
             {
-                path: '/login',
+                path: 'login',
                 element: <Login></Login>,
             },
             {
-                path: '/register',
+                path: 'register',
                 element: <Register></Register>,
             },
+            {
+                path: "add",
+                element: <AddCraft></AddCraft>
+              },
         ]
 },
 ]);
