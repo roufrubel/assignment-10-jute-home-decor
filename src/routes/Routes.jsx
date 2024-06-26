@@ -18,19 +18,19 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/craft')
+                loader: () => fetch('https://assignment-10-jute-home-decor-server-inh2majw4.vercel.app/craft')
             },
             {
                 path: "craft",
                 element: <AllCrafts></AllCrafts>,
-                loader: () => fetch('http://localhost:5000/craft')
+                loader: () => fetch('https://assignment-10-jute-home-decor-server-inh2majw4.vercel.app/craft')
               },
             {
                 path: 'craftlist',
                 element: <PrivateRoute>
                     <MyCraftList></MyCraftList>
                     </PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/craft')                    
+                loader: () => fetch('https://assignment-10-jute-home-decor-server-inh2majw4.vercel.app/craft')                    
             },
             {
                 path: 'login',

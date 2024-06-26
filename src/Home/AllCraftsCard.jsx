@@ -24,7 +24,7 @@ const AllCraftsCard = ({craft, crafts, setCrafts}) => {
               //   icon: "success"
               // });
 
-              fetch(`http://localhost:5000/craft/${_id}`, {
+              fetch(`https://assignment-10-jute-home-decor-server-inh2majw4.vercel.app/craft/${_id}`, {
                 method: "DELETE",
               })
               .then(res => res.json())
