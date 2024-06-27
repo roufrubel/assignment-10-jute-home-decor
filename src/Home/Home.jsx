@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import AllCraftsCard from "./AllCraftsCard";
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import Banner from "./Banner";
 
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
     }
     return (
         <>
+        <Banner></Banner>
+      <div>
+      <h2 className=" mt-20 text-2xl font-bold text-center">Art & Craft Items</h2>
       <div className="grid md:grid-cols-2 gap-10 container mx-auto mt-10">      
         {
           crafts?.map(craft => <AllCraftsCard
@@ -23,6 +27,7 @@ const Home = () => {
           setCrafts={setCrafts}
           ></AllCraftsCard>)
         }
+      </div>
       </div>
 
       </>

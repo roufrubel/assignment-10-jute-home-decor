@@ -8,8 +8,8 @@ const MyCraftList = () => {
     const {user} = useContext(AuthContext);
     const myCrafts = crafts.filter(craft => craft.user_email === user.email);
     return (
-        <div>
-            <h2>My Craft List</h2>
+        <div className="min-h-screen">
+            <h2 className="text-center mt-4 mb-4 font-bold">My Craft List</h2>
             <div>
                 {
                     myCrafts.length > 0 ? (

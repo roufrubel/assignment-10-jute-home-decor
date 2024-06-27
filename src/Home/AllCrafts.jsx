@@ -16,8 +16,8 @@ const AllCrafts = () => {
    
     return (
       <>
-      {/* <Header></Header> */}
-      <div className="grid md:grid-cols-2 gap-10 container mx-auto mt-10">      
+      <h2 className=" mt-20 text-2xl font-bold text-center">Art & Craft Items</h2>
+      <div className="grid md:grid-cols-2 gap-10 container mx-auto">      
         {
           crafts.map(craft => <AllCraftsCard
           key={craft._id}
