@@ -19,7 +19,7 @@ const AddCraft = () => {
     const user_name = form.userName.value;
     const newCraft = {image, item_name, subcategory_name, short_description, price, rating, customization, processing_time, stockStatus, user_email, user_name};
 
-    fetch('https://assignment-10-jute-home-decor-server-inh2majw4.vercel.app/craft', {
+    fetch('http://localhost:5000/craft', {
       method: 'POST',
       headers: {
          'content-type': 'application/json'
