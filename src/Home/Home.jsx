@@ -1,16 +1,22 @@
 import { useLoaderData } from "react-router-dom";
 import AllCraftsCard from "./AllCraftsCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 const Home = () => {
+    const {loading} = useContext(AuthContext);
     const loadedCraft = useLoaderData();
     const [crafts, setCrafts] = useState(loadedCraft)
+
+    if(loading){
+        <p className="text-2xl text-amber-700">Loading....</p>
+    }
     return (
         <>
       <div className="grid md:grid-cols-2 gap-10 container mx-auto mt-10">      
         {
-          crafts.map(craft => <AllCraftsCard
+          crafts?.map(craft => <AllCraftsCard
           key={craft._id}
           craft={craft}
           crafts={crafts}
@@ -18,7 +24,7 @@ const Home = () => {
           ></AllCraftsCard>)
         }
       </div>
-      
+
       </>
     );
 };

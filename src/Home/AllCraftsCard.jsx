@@ -1,10 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 const AllCraftsCard = ({craft, crafts, setCrafts}) => {
+    const {loading} = useContext(AuthContext);
     const {_id, image, item_name, price} = craft;
     // subcategory_name, short_description, price, rating, customization, processing_time, stockStatus, user_email, user_name
+
+    if(loading){
+        <p className="text-2xl text-amber-700">Loading....</p>
+    }
 
     const handleDelete = _id => {
         console.log(_id)

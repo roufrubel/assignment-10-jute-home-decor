@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllCraftsCard from "./AllCraftsCard";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 
 const AllCrafts = () => {
+    const {loading} = useContext(AuthContext);
     const loadedCraft = useLoaderData();
     const [crafts, setCrafts] = useState(loadedCraft)
+
+    if(loading){
+        <p className="text-2xl text-amber-700">Loading....</p>
+    }
    
     return (
       <>
