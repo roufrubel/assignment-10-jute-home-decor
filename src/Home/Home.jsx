@@ -1,14 +1,18 @@
-import { useLoaderData } from "react-router-dom";
-import AllCraftsCard from "./AllCraftsCard";
-import { useContext, useState } from "react";
+// import { useLoaderData } from "react-router-dom";
+// import AllCraftsCard from "./AllCraftsCard";
+import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Banner from "./Banner";
+import Sale from "./Sale";
+import Reviews from "./Reviews";
+import Category from "./Category";
+import CraftItems from "./CraftItems";
 
 
 const Home = () => {
     const {loading} = useContext(AuthContext);
-    const loadedCraft = useLoaderData();
-    const [crafts, setCrafts] = useState(loadedCraft)
+    // const loadedCraft = useLoaderData();
+    // const [crafts, setCrafts] = useState(loadedCraft)
 
     if(loading){
         <p className="text-2xl text-amber-700">Loading....</p>
@@ -16,7 +20,7 @@ const Home = () => {
     return (
         <>
         <Banner></Banner>
-      <div>
+      {/* <div>
       <h2 className=" mt-20 text-2xl font-bold text-center">Art & Craft Items</h2>
       <div className="grid md:grid-cols-2 gap-10 container mx-auto mt-10">      
         {
@@ -28,8 +32,11 @@ const Home = () => {
           ></AllCraftsCard>)
         }
       </div>
-      </div>
-
+      </div> */}
+      <CraftItems></CraftItems>
+      <Category></Category>
+        <Sale></Sale>
+        <Reviews></Reviews>
       </>
     );
 };
